@@ -1,3 +1,4 @@
+# Predict Future Sales Model Card
 ## Basic Information
 
 - **People or organization developing model:** Fabiha Hatem [hatemfabiha@gwu.edu](mailto:hatemfabiha@gwu.edu), Abigail Liang [abigail.liang@gwu.edu](mailto:abigail.liang@gwu.edu), Bella Luz [bella.luz@gwu.edu](mailto:bella.luz@gwu.edu), Wesley Tse [wesley.tse@.gwu.edu](mailto:wesley.tse@.gwu.edu)
