@@ -9,7 +9,8 @@
 
 - **License:** Apache 2.0 License
 
-- **Model implementation code:**
+- **Model implementation code:** [Predict Future Sales Project Notebook](https://github.com/fabiha-hatem/Group5_Project/blob/main/updatedproject5.ipynb)
+
 
 ## Intended Use
 
