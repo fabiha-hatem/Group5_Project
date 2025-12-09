@@ -60,7 +60,7 @@
 
 ## Test Data
 
-Source of test data: Kaggle “Predict Future Sales” competition dataset (test.csv).
+**Source of test data:** Kaggle “Predict Future Sales” competition dataset (test.csv).
 Number of rows in test data: 214,200
 State any differences in columns between training and test data:
 The test dataset does not include the target column item_cnt_month, which is present in the training data. It also includes an ID column used only for producing the final submission file. After preprocessing, all text-based fields (item_name, item_category_name, shop_name) are removed from both the training and test datasets. Aside from the expected absence of the target and presence of ID, the test set contains the same feature columns used by the model.
