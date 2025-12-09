@@ -58,16 +58,16 @@
 | item_category_name | metadata (excluded) | string | Text name of the item category (removed before modeling) |
 | shop_name | metadata (excluded) | string | Text name of the shop (removed before modeling) |
 
-**Quantitative Analysis
-**
+**Quantitative Analysis**
+
 To evaluate our model, we used Root Mean Squared Error (RMSE), which is the standard metric for continuous forecasting tasks like Predict Future Sales. RMSE measures the average difference between our predictions and the actual monthly item sales. It is appropriate for this dataset because sales values vary across items and shops, and the metric penalizes larger errors more heavily.
 
 Our model achieved an RMSE of 0.8837 on the training data and 0.9402 on the validation data. This small gap suggests the model generalizes reasonably well without severe overfitting. An average error of under one unit per item-month is consistent with typical XGBoost performance on this dataset, especially given the large amount of sparsity (many zeros) and volatility in retail sales patterns.
 
 To understand how the model made its predictions, we examined feature importance. Lagged sales features—especially item_cnt_month_lag_1—were by far the strongest predictors. This makes sense for a time-series retail problem: recent sales behavior often signals short-term demand. Shop-level average sales and other lag windows also contributed meaningfully, while metadata like item categories or shop characteristics played a smaller role. Together with the RMSE metrics, these plots helped confirm that the model behaved as expected for a lag-based forecasting approach.
 
-**Ethical Considerations
-**
+**Ethical Considerations**
+
 There are several potential negative impacts to consider when applying this model. From a math and software perspective, the model’s strong dependence on lag features means it struggles with items or stores that lack historical data. This often results in systematic underprediction for new, niche, or low-volume products. The sparse nature of the dataset also encourages the model to smooth out rare but meaningful demand spikes. Additionally, because time-series pipelines are highly sensitive to date alignment, even a small mistake in constructing lag features or merging datasets could cause data leakage, inflating validation performance while leading to unreliable real-world results.
 
 Real-world risks primarily relate to how stores and managers might use the forecasts. Underpredicting demand can lead to stockouts and lost revenue, while overpredicting can result in excess inventory and higher costs. These effects may be felt unevenly—smaller shops or specialized categories tend to suffer more from inaccurate predictions because the model has limited information to learn from. Forecasts may also influence staffing or budgeting, meaning employees and managers could be indirectly impacted if predictions are interpreted as more precise than they actually are.
