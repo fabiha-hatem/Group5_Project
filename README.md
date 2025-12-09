@@ -70,7 +70,7 @@ The test dataset does not include the target column item_cnt_month, which is pre
 - **Columns used as inputs in the final model:** date_block_num, shop_id, item_id, item_category_id, month, item_cnt_month_lag_1, item_cnt_month_lag_2, item_cnt_month_lag_3,
 date_item_avg_cnt_lag_1, date_shop_avg_cnt_lag_1
 
-(Note: all text-based descriptive columns were dropped.)
+  _(Note: all text-based descriptive columns were dropped.)_
 
 - **Column(s) used as target(s) in the final model:** item_cnt_month
 - **Type of model:** LightGBM Gradient Boosting Regressor
