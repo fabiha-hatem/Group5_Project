@@ -65,6 +65,19 @@
 - **State any differences in columns between training and test data:**
 The test dataset does not include the target column item_cnt_month, which is present in the training data. It also includes an ID column used only for producing the final submission file. After preprocessing, all text-based fields (item_name, item_category_name, shop_name) are removed from both the training and test datasets. Aside from the expected absence of the target and presence of ID, the test set contains the same feature columns used by the model.
 
+## Model Details
+
+- **Columns used as inputs in the final model:** date_block_num, shop_id, item_id, item_category_id, month, item_cnt_month_lag_1, item_cnt_month_lag_2, item_cnt_month_lag_3,
+date_item_avg_cnt_lag_1, date_shop_avg_cnt_lag_1
+(Note: all text-based descriptive columns were dropped.)
+
+- **Column(s) used as target(s) in the final model:** item_cnt_month
+- **Type of model:** LightGBM Gradient Boosting Regressor
+- **Software used to implement the model:** Python (pandas, NumPy, scikit-learn), LightGBM
+- **Version of the modeling software:**
+Installed via pip install lightgbm (version determined at runtime)
+
+
 ## Quantitaive Analysis
 
   To evaluate our model, we used Root Mean Squared Error (RMSE), which is the standard metric for continuous forecasting tasks like Predict Future Sales. RMSE measures the average difference between our predictions and the actual monthly item sales. It is appropriate for this dataset because sales values vary across items and shops, and the metric penalizes larger errors more heavily.
